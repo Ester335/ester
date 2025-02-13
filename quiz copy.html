@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre Trapers Brasileiros</title>
+    <link rel="stylesheet" href="style.css/style.css">
+  <script src="script.js/script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .quiz-container {
+            margin: auto;
+            width: 50%;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #f362c8;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .btn {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: rgb(0, 0, 0);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>𝓠𝓾𝓲𝔃</h1>
+
+    <div class="quiz-container" id="quiz">
+        <div class="question">
+            <p>1. Quem é o autor da música "Coringa"? </p>
+            <input type="radio" name="q1" value="1"> 1. MC Cabelinho<br>
+            <input type="radio" name="q1" value="2"> 2. Matuê<br>
+            <input type="radio" name="q1" value="3"> 3. Djonga<br>
+        </div>
+
+        <div class="question">
+            <p>2. Qual traper é conhecido como "O Rei do Trap"? </p>
+            <input type="radio" name="q2" value="1"> 1. Matuê<br>
+            <input type="radio" name="q2" value="2"> 2. Orochi<br>
+            <input type="radio" name="q2" value="3"> 3. Yung Lixo<br>
+        </div>
+
+        <div class="question">
+            <p>3. Qual traper foi pioneiro no estilo do Trap no Brasil? </p>
+            <input type="radio" name="q3" value="1"> 1. Djonga<br>
+            <input type="radio" name="q3" value="2"> 2. Matuê<br>
+            <input type="radio" name="q3" value="3"> 3. Racionais MC's<br>
+        </div>
+
+        <div class="question">
+            <p>4. Qual o nome do álbum de Matuê lançado em 2020? </p>
+            <input type="radio" name="q4" value="1"> 1. "Máquina do Tempo"<br>
+            <input type="radio" name="q4" value="2"> 2. "Kenny G"<br>
+            <input type="radio" name="q4" value="3"> 3. "Ouro de Tolo"<br>
+        </div>
+
+        <div class="question">
+            <p>5. Quem é o traper que tem a música "Foda-se" com a participação de Matuê? </p>
+            <input type="radio" name="q5" value="1"> 1. Orochi<br>
+            <input type="radio" name="q5" value="2"> 2. Yung Lixo<br>
+            <input type="radio" name="q5" value="3"> 3. Mc Cabelinho<br>
+        </div>
+
+        <button class="btn" onclick="submitQuiz()">Enviar Respostas</button>
+
+        <div class="result" id="result"></div>
+        <a href="portifolio.html" class="voltar">voltar</a>
+    </div>
+    <script>
+        function submitQuiz() {
+            var correctAnswers = [2, 1, 2, 2, 1]; // Respostas corretas para as perguntas
+            var userAnswers = [];
+            var wrongAnswers = [];
+            var score = 0;
+
+            for (var i = 1; i <= 5; i++) {
+                var answer = document.querySelector('input[name="q' + i + '"]:checked');
+                if (answer) {
+                    userAnswers.push(answer.value);
+                } else {
+                    userAnswers.push(null);
+                }
+            }
+
+            for (var i = 0; i < 5; i++) {
+                if (userAnswers[i] == correctAnswers[i]) {
+                    score++;
+                } else {
+                    wrongAnswers.push(i + 1);
+                }
+            }
+
+            var resultText = `Você acertou ${score} de 5 perguntas.`;
+            if (wrongAnswers.length > 0) {
+                resultText += `<br>Respostas erradas: Perguntas ${wrongAnswers.join(', ')}.`;
+            }
+            document.getElementById('result').innerHTML = resultText;
+        }
+
+        function changeColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>
