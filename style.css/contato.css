@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #af2999;
+    padding: 50px;
+}
+
+
+h1 {
+color: #333;
+}
+
+form {
+max-width: 600px;
+margin: 0 auto;
+background-color: #801b6f;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+font-size: 16px;
+border: 1px solid #b41f7b;
+border-radius: 5px;
+}
+
+button {
+padding: 10px 20px;
+font-size: 16px;
+background-color: #4CAF50;
+color: rgb(173, 33, 119);   
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #45a049;
+}
+
+.message {
+font-size: 18px;
+margin-top: 20px;
+}
+
+.error {
+color: red;
+}
+
+.success {
+color: green;
+}
+
+.social-links a {
+text-decoration: none;
+margin: 10px;
+font-size: 20px;
+color: #333;
+}
+
+.social-links a:hover {
+color: #4CAF50;
+}
